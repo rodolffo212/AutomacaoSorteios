@@ -1,0 +1,15 @@
+1652740034736	geckodriver	INFO	Listening on 127.0.0.1:62738
+1652740037781	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62739" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\RODOLF~1\\AppData\\Local\\Temp\\rust_mozprofileAYdEgC"
+1652740038018	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\RODOLF~1\\AppData\\Local\\Temp\\rust_mozprofileAYdEgC\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62739/devtools/browser/a23980fe-a8ae-4f06-bdaa-cfa272e22a2f
+1652740039090	Marionette	INFO	Listening on port 62758
+Read port: 62758
+1652740039208	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://sorteio.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://sorteio.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1652740042623	Marionette	INFO	Stopped listening on port 62758
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

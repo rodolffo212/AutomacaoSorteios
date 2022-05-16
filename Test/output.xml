@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.10 on win32)" generated="20220516 19:26:59.815" rpa="false" schemaversion="3">
+<suite id="s1" name="Sorteio testes" source="C:\Users\Rodolffo - RyzenWK\Documents\Sorteio.com\POC\Test\Sorteio_testes.robot">
+<test id="s1-t1" name="Caso de teste 01 - Cadastro de usuario &quot;Login&quot; com e-mail" line="12">
+<kw name="Abrir o Navegador" library="Sorteio_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 19:27:00.272" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<msg timestamp="20220516 19:27:00.273" level="INFO">Firefox driver log is always forced to to: C:\Users\Rodolffo - RyzenWK\Documents\Sorteio.com\POC\Test\geckodriver-1.log</msg>
+<status status="PASS" starttime="20220516 19:27:00.272" endtime="20220516 19:27:06.427"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:00.271" endtime="20220516 19:27:06.427"/>
+</kw>
+<kw name="Acessar a home page do site &quot;https://sorteio.com/&quot;" library="Sorteio_resources" sourcename="Acessar a home page do site &quot;${URL}&quot;">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220516 19:27:06.428" endtime="20220516 19:27:06.682"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220516 19:27:06.682" level="INFO">Opening url 'https://sorteio.com/'</msg>
+<status status="PASS" starttime="20220516 19:27:06.682" endtime="20220516 19:27:07.272"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//img[contains(@class,'h-6')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:07.272" endtime="20220516 19:27:07.310"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:06.428" endtime="20220516 19:27:07.310"/>
+</kw>
+<kw name="Entrar no menu &quot;Login&quot;" library="Sorteio_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:07.311" level="INFO">Clicking element '//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20220516 19:27:07.310" endtime="20220516 19:27:08.483"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:07.310" endtime="20220516 19:27:08.483"/>
+</kw>
+<kw name="Verificar se aparece a frase &quot;Ainda não tenho cadastro&quot;" library="Sorteio_resources" sourcename="Verificar se aparece a frase &quot;${Cadastro}&quot;">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[contains(.,'${Cadastro}')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:08.484" level="INFO">Clicking button '//button[contains(.,'Ainda não tenho cadastro')]'.</msg>
+<status status="PASS" starttime="20220516 19:27:08.483" endtime="20220516 19:27:08.712"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:08.483" endtime="20220516 19:27:08.712"/>
+</kw>
+<kw name=" Informar o e-mail a ser cadastrado e clicar em registrar" library="Sorteio_resources">
+<kw name="Email" library="FakerLibrary">
+<var>${EMAILFAKE}</var>
+<msg timestamp="20220516 19:27:08.714" level="INFO">${EMAILFAKE} = eduran@example.org</msg>
+<status status="PASS" starttime="20220516 19:27:08.713" endtime="20220516 19:27:08.714"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=email</arg>
+<arg>text=${EMAILFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:08.714" level="INFO">Typing text 'eduran@example.org' into text field 'email'.</msg>
+<status status="PASS" starttime="20220516 19:27:08.714" endtime="20220516 19:27:08.739"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:08.740" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220516 19:27:08.740" endtime="20220516 19:27:08.979"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h2[@class='MuiTypography-root MuiTypography-h2 css-1npwck1']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:08.980" endtime="20220516 19:27:10.054"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:08.713" endtime="20220516 19:27:10.054"/>
+</kw>
+<kw name="Informar o Usuario do instagram e o e-mail, após isso clicar em continuar" library="Sorteio_resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=username</arg>
+<arg>text=rodolffostret21</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:10.055" level="INFO">Typing text 'rodolffostret21' into text field 'username'.</msg>
+<status status="PASS" starttime="20220516 19:27:10.054" endtime="20220516 19:27:10.073"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${EMAILFAKE}</var>
+<msg timestamp="20220516 19:27:10.073" level="INFO">${EMAILFAKE} = davistristan@example.net</msg>
+<status status="PASS" starttime="20220516 19:27:10.073" endtime="20220516 19:27:10.073"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=email</arg>
+<arg>text=${EMAILFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:10.074" level="INFO">Typing text 'davistristan@example.net' into text field 'email'.</msg>
+<status status="PASS" starttime="20220516 19:27:10.073" endtime="20220516 19:27:10.093"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=sendInformations</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:10.093" level="INFO">Clicking button 'sendInformations'.</msg>
+<status status="PASS" starttime="20220516 19:27:10.093" endtime="20220516 19:27:10.333"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:10.054" endtime="20220516 19:27:10.333"/>
+</kw>
+<kw name="Verificar se é exibido a frase &quot;Selecione a publicação do seu sorteio&quot;" library="Sorteio_resources" sourcename="Verificar se é exibido a frase &quot;${sorteio}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//h2[contains(.,'${sorteio}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:10.334" endtime="20220516 19:27:13.604"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:10.334" endtime="20220516 19:27:13.604"/>
+</kw>
+<kw name="Selecionar o Post" library="Sorteio_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=(//div[@class='jss67']//div)[3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:13.605" level="INFO">Clicking element '(//div[@class='jss67']//div)[3]'.</msg>
+<status status="PASS" starttime="20220516 19:27:13.604" endtime="20220516 19:27:13.833"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:13.604" endtime="20220516 19:27:13.834"/>
+</kw>
+<kw name="Clicar em &quot;Continuar sem conectar&quot;" library="Sorteio_resources" sourcename="Clicar em &quot;${sem}&quot;">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[text()='${sem}']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:13.835" level="INFO">Clicking button '//button[text()='Continuar sem conectar']'.</msg>
+<status status="PASS" starttime="20220516 19:27:13.834" endtime="20220516 19:27:14.089"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:13.834" endtime="20220516 19:27:14.089"/>
+</kw>
+<kw name="Verificar que não é possivel seguir sem realizar o pagamento." library="Sorteio_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//strong[contains(.,'Ops! Limite Atingido.')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:14.090" endtime="20220516 19:27:14.099"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:14.090" endtime="20220516 19:27:14.099"/>
+</kw>
+<kw name="Fechar o Navegador" library="Sorteio_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220516 19:27:14.168" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220516 19:27:14.100" endtime="20220516 19:27:14.168"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220516 19:27:14.168" endtime="20220516 19:27:14.715"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:14.099" endtime="20220516 19:27:14.715"/>
+</kw>
+<doc>Esse teste Realiza o cadastro de um usuario no site Sorteios.com
+E verifica se o retorno teve sucesso.</doc>
+<tag>Cadastro</tag>
+<status status="PASS" starttime="20220516 19:27:00.271" endtime="20220516 19:27:14.715"/>
+</test>
+<test id="s1-t2" name="Caso de teste 02 - Login de usuario Valido e troca de senha." line="27">
+<kw name="Abrir o Navegador" library="Sorteio_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 19:27:14.717" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<msg timestamp="20220516 19:27:14.717" level="INFO">Firefox driver log is always forced to to: C:\Users\Rodolffo - RyzenWK\Documents\Sorteio.com\POC\Test\geckodriver-2.log</msg>
+<status status="PASS" starttime="20220516 19:27:14.717" endtime="20220516 19:27:19.219"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:14.716" endtime="20220516 19:27:19.219"/>
+</kw>
+<kw name="Acessar a home page do site &quot;https://sorteio.com/&quot;" library="Sorteio_resources" sourcename="Acessar a home page do site &quot;${URL}&quot;">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220516 19:27:19.220" endtime="20220516 19:27:19.476"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220516 19:27:19.476" level="INFO">Opening url 'https://sorteio.com/'</msg>
+<status status="PASS" starttime="20220516 19:27:19.476" endtime="20220516 19:27:20.221"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//img[contains(@class,'h-6')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:20.221" endtime="20220516 19:27:20.261"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:19.219" endtime="20220516 19:27:20.261"/>
+</kw>
+<kw name="Entrar no menu &quot;Login&quot;" library="Sorteio_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:20.262" level="INFO">Clicking element '//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20220516 19:27:20.262" endtime="20220516 19:27:21.343"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:20.262" endtime="20220516 19:27:21.344"/>
+</kw>
+<kw name="Informar e-mail e senha" library="Sorteio_resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@type='text']</arg>
+<arg>text=testerodolffo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:21.345" level="INFO">Typing text 'testerodolffo@gmail.com' into text field '//input[@type='text']'.</msg>
+<status status="PASS" starttime="20220516 19:27:21.344" endtime="20220516 19:27:21.378"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=//input[contains(@type,'password')]</arg>
+<arg>password=30130705Rr!</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:21.378" level="INFO">Typing password into text field '//input[contains(@type,'password')]'.</msg>
+<msg timestamp="20220516 19:27:21.381" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220516 19:27:21.396" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220516 19:27:21.378" endtime="20220516 19:27:21.397"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:21.344" endtime="20220516 19:27:21.397"/>
+</kw>
+<kw name="Clicar em fazer Login" library="Sorteio_resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[contains(.,'Fazer login')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:21.398" level="INFO">Clicking button '//button[contains(.,'Fazer login')]'.</msg>
+<status status="PASS" starttime="20220516 19:27:21.397" endtime="20220516 19:27:21.635"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:21.397" endtime="20220516 19:27:21.635"/>
+</kw>
+<kw name="Clicar em &quot;alterar a senha&quot;" library="Sorteio_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${AlterarSenha}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:21.636" endtime="20220516 19:27:22.073"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${AlterarSenha}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:22.074" level="INFO">Clicking button 'Xpath=//h4[text()='Senha']/following-sibling::button'.</msg>
+<status status="PASS" starttime="20220516 19:27:22.074" endtime="20220516 19:27:22.301"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:21.635" endtime="20220516 19:27:22.301"/>
+</kw>
+<kw name="Prencher o campo senha nova e confirmar os mesmos." library="Sorteio_resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@id='nova']</arg>
+<arg>text=30140705Rr!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:22.302" level="INFO">Typing text '30140705Rr!' into text field '//input[@id='nova']'.</msg>
+<status status="PASS" starttime="20220516 19:27:22.302" endtime="20220516 19:27:22.318"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@id='confirmacao']</arg>
+<arg>text=30140705Rr!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:22.319" level="INFO">Typing text '30140705Rr!' into text field '//input[@id='confirmacao']'.</msg>
+<status status="PASS" starttime="20220516 19:27:22.319" endtime="20220516 19:27:22.335"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:22.335" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220516 19:27:22.335" endtime="20220516 19:27:22.561"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:22.301" endtime="20220516 19:27:22.562"/>
+</kw>
+<kw name="Fechar o Navegador" library="Sorteio_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220516 19:27:22.623" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220516 19:27:22.562" endtime="20220516 19:27:22.623"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220516 19:27:22.623" endtime="20220516 19:27:23.145"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:22.562" endtime="20220516 19:27:23.146"/>
+</kw>
+<doc>Esse teste Realiza o Login com um usuario no site Sorteios.com
+E realizar a troca da sua senha.</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20220516 19:27:14.716" endtime="20220516 19:27:23.146"/>
+</test>
+<test id="s1-t3" name="Caso de teste 03 - Login de usuario invalido e troca de senha." line="39">
+<kw name="Abrir o Navegador" library="Sorteio_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 19:27:23.148" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<msg timestamp="20220516 19:27:23.148" level="INFO">Firefox driver log is always forced to to: C:\Users\Rodolffo - RyzenWK\Documents\Sorteio.com\POC\Test\geckodriver-3.log</msg>
+<status status="PASS" starttime="20220516 19:27:23.147" endtime="20220516 19:27:27.687"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:23.147" endtime="20220516 19:27:27.687"/>
+</kw>
+<kw name="Acessar a home page do site &quot;https://sorteio.com/&quot;" library="Sorteio_resources" sourcename="Acessar a home page do site &quot;${URL}&quot;">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220516 19:27:27.688" endtime="20220516 19:27:27.944"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220516 19:27:27.944" level="INFO">Opening url 'https://sorteio.com/'</msg>
+<status status="PASS" starttime="20220516 19:27:27.944" endtime="20220516 19:27:28.536"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//img[contains(@class,'h-6')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:28.536" endtime="20220516 19:27:28.577"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:27.688" endtime="20220516 19:27:28.577"/>
+</kw>
+<kw name="Entrar no menu &quot;Login&quot;" library="Sorteio_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:28.578" level="INFO">Clicking element '//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20220516 19:27:28.578" endtime="20220516 19:27:29.733"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:28.577" endtime="20220516 19:27:29.733"/>
+</kw>
+<kw name="Informar e-mail e senha invalidas" library="Sorteio_resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@type='text']</arg>
+<arg>text=testerodolffogmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:29.734" level="INFO">Typing text 'testerodolffogmail.com' into text field '//input[@type='text']'.</msg>
+<status status="PASS" starttime="20220516 19:27:29.734" endtime="20220516 19:27:29.760"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=//input[contains(@type,'password')]</arg>
+<arg>password=3010705Rr!</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:29.761" level="INFO">Typing password into text field '//input[contains(@type,'password')]'.</msg>
+<msg timestamp="20220516 19:27:29.765" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220516 19:27:29.778" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220516 19:27:29.760" endtime="20220516 19:27:29.778"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:29.733" endtime="20220516 19:27:29.778"/>
+</kw>
+<kw name="Clicar em fazer Login" library="Sorteio_resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[contains(.,'Fazer login')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:29.779" level="INFO">Clicking button '//button[contains(.,'Fazer login')]'.</msg>
+<status status="PASS" starttime="20220516 19:27:29.779" endtime="20220516 19:27:30.019"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:29.778" endtime="20220516 19:27:30.020"/>
+</kw>
+<kw name="Login nao permitido" library="Sorteio_resources">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>text=Bem vindo</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220516 19:27:30.026" level="INFO">Current page contains text 'Bem vindo'.</msg>
+<status status="PASS" starttime="20220516 19:27:30.020" endtime="20220516 19:27:30.026"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:30.020" endtime="20220516 19:27:30.026"/>
+</kw>
+<kw name="Fechar o Navegador" library="Sorteio_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220516 19:27:30.107" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220516 19:27:30.027" endtime="20220516 19:27:30.107"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220516 19:27:30.107" endtime="20220516 19:27:30.734"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:30.026" endtime="20220516 19:27:30.734"/>
+</kw>
+<doc>Esse teste realiza a tentativa de login com um usuario invalido no site Sorteios.com</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20220516 19:27:23.147" endtime="20220516 19:27:30.735"/>
+</test>
+<test id="s1-t4" name="Caso de teste 04 - Envio de mensagem para o Suporte" line="48">
+<kw name="Abrir o Navegador" library="Sorteio_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 19:27:30.736" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<msg timestamp="20220516 19:27:30.737" level="INFO">Firefox driver log is always forced to to: C:\Users\Rodolffo - RyzenWK\Documents\Sorteio.com\POC\Test\geckodriver-4.log</msg>
+<status status="PASS" starttime="20220516 19:27:30.736" endtime="20220516 19:27:35.140"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:30.736" endtime="20220516 19:27:35.140"/>
+</kw>
+<kw name="Acessar a home page do site &quot;https://sorteio.com/&quot;" library="Sorteio_resources" sourcename="Acessar a home page do site &quot;${URL}&quot;">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220516 19:27:35.141" endtime="20220516 19:27:35.394"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220516 19:27:35.395" level="INFO">Opening url 'https://sorteio.com/'</msg>
+<status status="PASS" starttime="20220516 19:27:35.394" endtime="20220516 19:27:35.989"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//img[contains(@class,'h-6')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:35.989" endtime="20220516 19:27:36.033"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:35.141" endtime="20220516 19:27:36.033"/>
+</kw>
+<kw name="Entrar no menu &quot;Login&quot;" library="Sorteio_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:36.034" level="INFO">Clicking element '//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20220516 19:27:36.033" endtime="20220516 19:27:37.185"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:36.033" endtime="20220516 19:27:37.185"/>
+</kw>
+<kw name="Selecionar a opção esqueci minha senha" library="Sorteio_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//button[contains(.,'Esqueci minha senha')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:37.187" level="INFO">Clicking element '//button[contains(.,'Esqueci minha senha')]'.</msg>
+<status status="PASS" starttime="20220516 19:27:37.186" endtime="20220516 19:27:37.414"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:37.186" endtime="20220516 19:27:37.414"/>
+</kw>
+<kw name="Informar o e-mail cadastrado e clicar em recuperar senha, email enviado com sucesso." library="Sorteio_resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@type='text']</arg>
+<arg>text=testerodolffo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:37.415" level="INFO">Typing text 'testerodolffo@gmail.com' into text field '//input[@type='text']'.</msg>
+<status status="PASS" starttime="20220516 19:27:37.415" endtime="20220516 19:27:37.442"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20220516 19:27:37.442" endtime="20220516 19:27:37.444"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[contains(.,'Recuperar senha')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:37.444" level="INFO">Clicking button '//button[contains(.,'Recuperar senha')]'.</msg>
+<status status="PASS" starttime="20220516 19:27:37.444" endtime="20220516 19:27:37.681"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:37.415" endtime="20220516 19:27:37.682"/>
+</kw>
+<kw name="Fechar o Navegador" library="Sorteio_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220516 19:27:37.751" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220516 19:27:37.682" endtime="20220516 19:27:37.751"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220516 19:27:37.751" endtime="20220516 19:27:38.328"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:37.682" endtime="20220516 19:27:38.328"/>
+</kw>
+<doc>Esse teste Realiza o envio de uma mensagem
+Para o time de suporte.</doc>
+<tag>Suporte</tag>
+<status status="PASS" starttime="20220516 19:27:30.735" endtime="20220516 19:27:38.328"/>
+</test>
+<test id="s1-t5" name="Caso de teste 05 - Envio de mensagem para o Suporte" line="60">
+<kw name="Abrir o Navegador" library="Sorteio_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 19:27:38.330" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<msg timestamp="20220516 19:27:38.331" level="INFO">Firefox driver log is always forced to to: C:\Users\Rodolffo - RyzenWK\Documents\Sorteio.com\POC\Test\geckodriver-5.log</msg>
+<status status="PASS" starttime="20220516 19:27:38.330" endtime="20220516 19:27:42.834"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:38.329" endtime="20220516 19:27:42.834"/>
+</kw>
+<kw name="Acessar a aba meu perfil" library="Sorteio_resources">
+<kw name="Acessar a home page do site &quot;${URL2}&quot;" library="Sorteio_resources" sourcename="Acessar a home page do site &quot;${URL}&quot;">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220516 19:27:42.835" endtime="20220516 19:27:43.093"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220516 19:27:43.094" level="INFO">Opening url 'https://sorteio.com/'</msg>
+<status status="PASS" starttime="20220516 19:27:43.093" endtime="20220516 19:27:43.690"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//img[contains(@class,'h-6')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:43.690" endtime="20220516 19:27:43.729"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:42.834" endtime="20220516 19:27:43.729"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:43.730" level="INFO">Clicking element '//*[@id="__next"]/div/nav/nav/div/div[3]/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20220516 19:27:43.730" endtime="20220516 19:27:44.784"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[@type='text']</arg>
+<arg>text=testerodolffo@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:44.785" level="INFO">Typing text 'testerodolffo@gmail.com' into text field '//input[@type='text']'.</msg>
+<status status="PASS" starttime="20220516 19:27:44.785" endtime="20220516 19:27:44.814"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=//input[contains(@type,'password')]</arg>
+<arg>password=30130705Rr!</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:44.814" level="INFO">Typing password into text field '//input[contains(@type,'password')]'.</msg>
+<msg timestamp="20220516 19:27:44.818" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220516 19:27:44.835" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220516 19:27:44.814" endtime="20220516 19:27:44.835"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[contains(.,'Fazer login')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:44.836" level="INFO">Clicking button '//button[contains(.,'Fazer login')]'.</msg>
+<status status="PASS" starttime="20220516 19:27:44.835" endtime="20220516 19:27:45.074"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:42.834" endtime="20220516 19:27:45.074"/>
+</kw>
+<kw name="Selecionar suporte" library="Sorteio_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${SUPORTE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 19:27:45.075" endtime="20220516 19:27:45.370"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${SUPORTE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:45.371" level="INFO">Clicking element 'Xpath=//button[contains(.,'Suporte')]'.</msg>
+<status status="PASS" starttime="20220516 19:27:45.370" endtime="20220516 19:27:45.598"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=${Problema}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220516 19:27:45.612" level="INFO">Element 'Xpath=//h2[contains(.,'Por favor, descreva seu problema abaixo')]' is displayed.</msg>
+<status status="PASS" starttime="20220516 19:27:45.598" endtime="20220516 19:27:45.612"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:45.075" endtime="20220516 19:27:45.612"/>
+</kw>
+<kw name="Informar o texto e clicar em solicitar atendimento" library="Sorteio_resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[contains(@type,'text')]</arg>
+<arg>text=Teste rodolffo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:45.613" level="INFO">Typing text 'Teste rodolffo' into text field '//input[contains(@type,'text')]'.</msg>
+<status status="PASS" starttime="20220516 19:27:45.613" endtime="20220516 19:27:45.631"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220516 19:27:45.632" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220516 19:27:45.631" endtime="20220516 19:27:45.929"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:45.613" endtime="20220516 19:27:45.929"/>
+</kw>
+<kw name="Metodos de contato exibidos com sucesso." library="Sorteio_resources">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>locator=//h2[contains(.,'Por favor, escolha uma forma de contato:')]</arg>
+<arg>expected=Por favor, escolha uma forma de contato:</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220516 19:27:45.930" level="INFO">Verifying element '//h2[contains(.,'Por favor, escolha uma forma de contato:')]' contains exact text 'Por favor, escolha uma forma de contato:'.</msg>
+<status status="PASS" starttime="20220516 19:27:45.930" endtime="20220516 19:27:45.939"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:45.930" endtime="20220516 19:27:45.939"/>
+</kw>
+<kw name="Fechar o Navegador" library="Sorteio_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220516 19:27:46.002" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220516 19:27:45.940" endtime="20220516 19:27:46.002"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220516 19:27:46.002" endtime="20220516 19:27:46.577"/>
+</kw>
+<status status="PASS" starttime="20220516 19:27:45.940" endtime="20220516 19:27:46.577"/>
+</kw>
+<doc>Esse teste Realiza o envio de uma mensagem
+Para o time de suporte.</doc>
+<tag>Suporte</tag>
+<status status="PASS" starttime="20220516 19:27:38.329" endtime="20220516 19:27:46.578"/>
+</test>
+<doc>Essa suite testa o site da https://sorteio.com/</doc>
+<status status="PASS" starttime="20220516 19:26:59.817" endtime="20220516 19:27:46.579"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Cadastro</stat>
+<stat pass="2" fail="0" skip="0">Login</stat>
+<stat pass="2" fail="0" skip="0">Suporte</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Sorteio testes">Sorteio testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
