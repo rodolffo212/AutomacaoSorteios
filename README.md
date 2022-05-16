@@ -1,0 +1,2 @@
+# AutomacaoSorteios
+POC processo seletivo
